@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Website</title>
-</head>
-<body>
-
-<h1>Welcome</h1>
+<h2>Posts</h2>
 <div id="posts"></div>
 
-<script src="main.js"></script>
-</body>
-</html>
+<script>
+  const posts = JSON.parse(localStorage.getItem("posts")) || [];
+  const box = document.getElementById("posts");
+
+  posts.forEach(post => {
+    box.innerHTML += `
+      <h3>${post.title}</h3>
+      <p>${post.content}</p>
+      <hr>
+    `;
+  });
+</script>
