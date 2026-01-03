@@ -1,0 +1,10 @@
+[
+  {
+    "title": "First Post",
+    "content": "Yeh normal user ke liye content hai"
+  },
+  {
+    "title": "Second Post",
+    "content": "Admin isse edit ya delete kar sakta hai"
+  }
+]
