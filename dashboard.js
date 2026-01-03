@@ -1,4 +1,4 @@
-let posts = [];
+let posts = JSON.parse(localStorage.getItem("posts")) || [];
 
 function renderPosts() {
   const box = document.getElementById("posts");
@@ -12,6 +12,8 @@ function renderPosts() {
       <hr>
     `;
   });
+
+  localStorage.setItem("posts", JSON.stringify(posts));
 }
 
 function addPost() {
@@ -34,3 +36,5 @@ function deletePost(index) {
   posts.splice(index, 1);
   renderPosts();
 }
+
+renderPosts();
