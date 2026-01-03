@@ -1,6 +1,10 @@
-const CLIENT_ID = "PASTE_YOUR_CLIENT_ID";
-const ADMIN_USERNAME = "yourgithubusername";
-
 function login() {
-  window.location = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=repo`;
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+
+  if (user === "admin" && pass === "12345") {
+    window.location.href = "dashboard.html";
+  } else {
+    alert("Wrong username or password");
+  }
 }
