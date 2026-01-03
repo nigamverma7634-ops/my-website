@@ -5,11 +5,21 @@
 </head>
 <body>
 
-<h1>Welcome Admin</h1>
+<h1>Admin Dashboard</h1>
 
-<p>Yahan se aap content edit/delete kar sakte ho</p>
+<h3>Add New Post</h3>
+<input id="title" placeholder="Post Title"><br><br>
+<textarea id="content" placeholder="Post Content"></textarea><br><br>
+<button onclick="addPost()">Add Post</button>
 
+<hr>
+
+<h3>All Posts</h3>
+<div id="posts"></div>
+
+<hr>
 <a href="index.html">Go to Website</a>
 
+<script src="dashboard.js"></script>
 </body>
 </html>
