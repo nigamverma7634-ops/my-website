@@ -1,9 +1,20 @@
-<h2>Posts</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website</title>
+</head>
+<body>
+
+<h1>Posts</h1>
 <div id="posts"></div>
 
 <script>
   const posts = JSON.parse(localStorage.getItem("posts")) || [];
   const box = document.getElementById("posts");
+
+  if (posts.length === 0) {
+    box.innerHTML = "<p>No posts yet</p>";
+  }
 
   posts.forEach(post => {
     box.innerHTML += `
@@ -13,3 +24,6 @@
     `;
   });
 </script>
+
+</body>
+</html>
