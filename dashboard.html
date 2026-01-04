@@ -21,11 +21,21 @@
 
 <hr>
 <a href="index.html">Go to Website</a>
-
-<!-- Supabase CDN -->
+  <!-- Supabase CDN -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.7/dist/umd/supabase.js"></script>
 
-<!-- Dashboard JS -->
+<!-- Supabase Init -->
+<script>
+  const SUPABASE_URL = "https://cjoupiubkwhmlbzfek.supabase.co";
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNqb3Vwbml1YmJrd2htbGJ6ZmVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1MjE1NDQsImV4cCI6MjA4MzA5NzU0NH0.DkGna34dS0v63WtPQtoDSs61tEAlh-vlo3ZQ6iccWyg";
+
+  window.supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+  );
+</script>
+
+<!-- Dashboard Logic -->
 <script src="dashboard.js"></script>
 </body>
 </html>
