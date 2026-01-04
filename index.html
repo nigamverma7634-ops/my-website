@@ -1,9 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website</title>
+</head>
+<body>
+
+<h1>Posts</h1>
+<div id="posts">Loading...</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const SUPABASE_URL = "https://cjoupniubbkwhmlbzfek.supabase.co";
-  const SUPABASE_KEY = "sb_publishable_KuarHuIDEW7JG89Ryy3lmA_XXoj5prE";
+  const SUPABASE_URL = "https://cjopnuibbkwhmlbzfek.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_KuarHUIDEW7JG8Ryy3ImA_XXoj5pFE";
 
   const supabase = supabaseJs.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
   );
+
+  async function loadPosts() {
+    const { data, error } = await supabase
+      .from("posts")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    const box = document.getElementById("posts");
+    box.innerHTML = "";
+
+    if (error) {
+      box.innerHTML = "Error loading posts";
+      console.error(error);
+      return;
+    }
+
+    if (data.length === 0) {
+      box.innerHTML = "<p>No posts yet</p>";
+      return;
+    }
+
+    data.forEach(post => {
+      box.innerHTML += `
+        <h3>${post.title}</h3>
+        <p>${post.content}</p>
+        <hr>
+      `;
+    });
+  }
+
+  loadPosts();
+</script>
+
+</body>
+</html>
