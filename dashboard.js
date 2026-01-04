@@ -1,4 +1,4 @@
-let posts = JSON.parse(localStorage.getItem("posts")) || [];
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 function renderPosts() {
   const box = document.getElementById("posts");
@@ -16,13 +16,31 @@ function renderPosts() {
   localStorage.setItem("posts", JSON.stringify(posts));
 }
 
-function addPost() {
+async function addPost() {
   const title = document.getElementById("title").value;
   const content = document.getElementById("content").value;
 
   if (!title || !content) {
     alert("Title aur content likho");
     return;
+  }
+
+  const { error } = await supabaseClient
+    .from("posts")
+    .insert([
+      {
+        title: title,
+        content: content,
+        is_published: true
+      }
+    ]);
+
+  if (error) {
+    alert("Error: " + error.message);
+  } else {
+    alert("Post added successfully");
+  }
+}
   }
 
   posts.push({ title, content });
