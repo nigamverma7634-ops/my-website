@@ -10,8 +10,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const SUPABASE_URL = "https://cjopnuibbkwhmlbzfek.supabase.co";
-  const SUPABASE_KEY = "sb_publishable_KuarHUIDEW7JG8Ryy3ImA_XXoj5pFE";
+  const SUPABASE_URL = "https://cjopniubbkwhmlbzfek.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_KuarHUiDEW7JG89Ryy3lmA_XXoj5pnF";
 
   const supabase = supabaseJs.createClient(
     SUPABASE_URL,
@@ -21,20 +21,21 @@
   async function loadPosts() {
     const { data, error } = await supabase
       .from("posts")
-      .select("*")
-      .order("created_at", { ascending: false });
+      .select("title, content")
+      .eq("is_published", true)
+      .order("id", { ascending: false });
 
     const box = document.getElementById("posts");
     box.innerHTML = "";
 
     if (error) {
-      box.innerHTML = "Error loading posts";
+      box.innerText = "Error loading posts";
       console.error(error);
       return;
     }
 
     if (data.length === 0) {
-      box.innerHTML = "<p>No posts yet</p>";
+      box.innerText = "No posts found";
       return;
     }
 
