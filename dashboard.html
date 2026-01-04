@@ -22,6 +22,21 @@
 <hr>
 <a href="index.html">Go to Website</a>
 
+<!-- Supabase CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Supabase Init -->
+<script>
+  const SUPABASE_URL = "https://cjoupiubkwhmlbzfek.supabase.co";
+  const SUPABASE_ANON_KEY = "PASTE_YOUR_ANON_KEY_HERE";
+
+  const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+  );
+</script>
+
+<!-- Dashboard logic -->
 <script src="dashboard.js"></script>
 </body>
 </html>
