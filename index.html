@@ -17,7 +17,6 @@
     SUPABASE_URL,
     SUPABASE_KEY
   );
-
   async function loadPosts() {
     const { data, error } = await supabaseClient
       .from("posts")
@@ -47,7 +46,6 @@ data.forEach(post => {
   `;
 });
   }
-
   loadPosts();
 </script>
 
