@@ -1,29 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Website</title>
-</head>
-<body>
-
-<h1>Posts</h1>
-<div id="posts"></div>
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const posts = JSON.parse(localStorage.getItem("posts")) || [];
-  const box = document.getElementById("posts");
+  const SUPABASE_URL = "https://cjoupniubbkwhmlbzfek.supabase.co";
+  const SUPABASE_KEY = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
 
-  if (posts.length === 0) {
-    box.innerHTML = "<p>No posts yet</p>";
-  }
-
-  posts.forEach(post => {
-    box.innerHTML += `
-      <h3>${post.title}</h3>
-      <p>${post.content}</p>
-      <hr>
-    `;
-  });
-</script>
-
-</body>
-</html>
+  const supabase = supabaseJs.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
