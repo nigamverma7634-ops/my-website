@@ -1,20 +1,10 @@
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+const SUPABASE_URL = "https://cjoupniubbkwhmlbzfek.supabase.co";
+const SUPABASE_ANON_KEY = "YOUR_ANON_KEY";
 
-function renderPosts() {
-  const box = document.getElementById("posts");
-  box.innerHTML = "";
-
-  posts.forEach((post, index) => {
-    box.innerHTML += `
-      <h4>${post.title}</h4>
-      <p>${post.content}</p>
-      <button onclick="deletePost(${index})">Delete</button>
-      <hr>
-    `;
-  });
-
-  localStorage.setItem("posts", JSON.stringify(posts));
-}
+const supabaseClient = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);
 
 async function addPost() {
   const title = document.getElementById("title").value;
@@ -36,23 +26,31 @@ async function addPost() {
     ]);
 
   if (error) {
-    alert("Error: " + error.message);
+    alert(error.message);
   } else {
     alert("Post added successfully");
+    document.getElementById("title").value = "";
+    document.getElementById("content").value = "";
+    loadPosts();
   }
 }
-  }
 
-  posts.push({ title, content });
-  renderPosts();
+async function loadPosts() {
+  const { data } = await supabaseClient
+    .from("posts")
+    .select("*")
+    .order("id", { ascending: false });
 
-  document.getElementById("title").value = "";
-  document.getElementById("content").value = "";
+  const box = document.getElementById("posts");
+  box.innerHTML = "";
+
+  data.forEach(post => {
+    box.innerHTML += `
+      <h4>${post.title}</h4>
+      <p>${post.content}</p>
+      <hr>
+    `;
+  });
 }
 
-function deletePost(index) {
-  posts.splice(index, 1);
-  renderPosts();
-}
-
-renderPosts();
+loadPosts();
