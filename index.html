@@ -7,19 +7,19 @@
 
 <h1>Posts</h1>
 <div id="posts">Loading...</div>
-
+  
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
   const SUPABASE_URL = "https://cjopniubbkwhmlbzfek.supabase.co";
   const SUPABASE_KEY = "sb_publishable_KuarHUiDEW7JG89Ryy3lmA_XXoj5pnF";
 
-  const supabase = supabaseJs.createClient(
+  const supabaseClient = supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
   );
 
   async function loadPosts() {
-    const { data, error } = await supabase
+    const { data, error } = await supabaseClient
       .from("posts")
       .select("title, content")
       .eq("is_published", true)
@@ -29,12 +29,12 @@
     box.innerHTML = "";
 
     if (error) {
-      box.innerText = "Error loading posts";
       console.error(error);
+      box.innerText = "Error loading posts";
       return;
     }
 
-    if (data.length === 0) {
+    if (!data || data.length === 0) {
       box.innerText = "No posts found";
       return;
     }
@@ -51,5 +51,3 @@
   loadPosts();
 </script>
 
-</body>
-</html>
