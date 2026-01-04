@@ -25,27 +25,27 @@
       .eq("is_published", true)
       .order("id", { ascending: false });
 
-    const box = document.getElementById("posts");
-    box.innerHTML = "";
+ const box = document.getElementById("posts");
+box.innerHTML = "";
 
-    if (error) {
-      console.error(error);
-      box.innerText = "Error loading posts";
-      return;
-    }
+if (error) {
+  console.error(error);
+  box.innerText = "Error loading posts";
+  return;
+}
 
-    if (!data || data.length === 0) {
-      box.innerText = "No posts found";
-      return;
-    }
+if (!data || data.length === 0) {
+  box.innerText = "No posts found";
+  return;
+}
 
-    data.forEach(post => {
-      box.innerHTML += `
-        <h3>${post.title}</h3>
-        <p>${post.content}</p>
-        <hr>
-      `;
-    });
+data.forEach(post => {
+  box.innerHTML += `
+    <h3>${post.title}</h3>
+    <p>${post.content}</p>
+    <hr>
+  `;
+});
   }
 
   loadPosts();
