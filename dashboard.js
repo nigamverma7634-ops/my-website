@@ -55,3 +55,20 @@ async function loadPosts() {
 }
 
 loadPosts();
+// ✅ DELETE POST FUNCTION (GLOBAL)
+window.deletePost = async function (id) {
+  if (!confirm("Are you sure you want to delete this post?")) return;
+
+  const { error } = await window.supabaseClient
+    .from("posts")
+    .delete()
+    .eq("id", id);
+
+  if (error) {
+    alert("Delete failed: " + error.message);
+    console.error(error);
+  } else {
+    alert("Post deleted successfully");
+    loadPosts(); // refresh list
+  }
+};
