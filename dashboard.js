@@ -19,19 +19,27 @@ async function addPost() {
 
   if (error) {
     alert(error.message);
-  } else {
-    alert("Post added successfully");
-    document.getElementById("title").value = "";
-    document.getElementById("content").value = "";
-    loadPosts();
+    return;
   }
+
+  alert("Post added successfully");
+
+  document.getElementById("title").value = "";
+  document.getElementById("content").value = "";
+
+  loadPosts();
 }
 
 async function loadPosts() {
-  const { data } = await supabaseClient
+  const { data, error } = await supabaseClient
     .from("posts")
     .select("*")
     .order("id", { ascending: false });
+
+  if (error) {
+    console.error(error);
+    return;
+  }
 
   const box = document.getElementById("posts");
   box.innerHTML = "";
