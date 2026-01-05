@@ -1,13 +1,13 @@
 async function addPost() {
-  const title = document.getElementById("title").value;
-  const content = document.getElementById("content").value;
+  const title = document.getElementById("title").value.trim();
+  const content = document.getElementById("content").value.trim();
 
   if (!title || !content) {
     alert("Title aur content likho");
     return;
   }
 
-  const { error } = await supabaseClient
+  const { error } = await window.supabaseClient
     .from("posts")
     .insert([
       {
@@ -19,19 +19,16 @@ async function addPost() {
 
   if (error) {
     alert(error.message);
-    return;
+  } else {
+    alert("Post added successfully");
+    document.getElementById("title").value = "";
+    document.getElementById("content").value = "";
+    loadPosts();
   }
-
-  alert("Post added successfully");
-
-  document.getElementById("title").value = "";
-  document.getElementById("content").value = "";
-
-  loadPosts();
 }
 
 async function loadPosts() {
-  const { data, error } = await supabaseClient
+  const { data, error } = await window.supabaseClient
     .from("posts")
     .select("*")
     .order("id", { ascending: false });
@@ -48,7 +45,7 @@ async function loadPosts() {
     box.innerHTML += `
       <h4>${post.title}</h4>
       <p>${post.content}</p>
-      <hr>
+      <hr />
     `;
   });
 }
