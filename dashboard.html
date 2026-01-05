@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Admin Dashboard</title>
 </head>
 <body>
@@ -10,24 +10,26 @@
 
   <h3>Add New Post</h3>
 
-  <input id="title" placeholder="Post Title"><br><br>
+  <input id="title" placeholder="Post Title" />
+  <br /><br />
 
-  <textarea id="content" placeholder="Post Content"></textarea><br><br>
+  <textarea id="content" placeholder="Post Content"></textarea>
+  <br /><br />
 
   <button onclick="addPost()">Add Post</button>
 
-  <hr>
+  <hr />
 
   <h3>All Posts</h3>
   <div id="posts"></div>
 
-  <hr>
+  <hr />
   <a href="index.html">Go to Website</a>
 
-  <!-- Supabase CDN -->
+  <!-- Supabase CDN (ONLY ONCE) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-  <!-- Supabase Init (ONLY HERE) -->
+  <!-- Supabase Init (ONLY HERE, NOT IN JS FILE) -->
   <script>
     const SUPABASE_URL = "https://cjoupibukwhmlbzfek.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNqb3Vwbml1YmJrd2htbGJ6ZmVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1MjE1NDQsImV4cCI6MjA4MzA5NzU0NH0.DkGna34dS0v63WtPQtoDSs61tEAlh-vlo3ZQ6iccWyg";
