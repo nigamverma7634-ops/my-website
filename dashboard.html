@@ -1,41 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Admin Dashboard</title>
 </head>
 <body>
 
-<h1>Admin Dashboard</h1>
+  <h1>Admin Dashboard</h1>
 
-<h3>Add New Post</h3>
-<input id="title" placeholder="Post Title"><br><br>
+  <h3>Add New Post</h3>
 
-<textarea id="content" placeholder="Post Content"></textarea><br><br>
+  <input id="title" placeholder="Post Title"><br><br>
 
-<button onclick="addPost()">Add Post</button>
+  <textarea id="content" placeholder="Post Content"></textarea><br><br>
 
-<hr>
+  <button onclick="addPost()">Add Post</button>
 
-<h3>All Posts</h3>
-<div id="posts"></div>
+  <hr>
 
-<hr>
-<a href="index.html">Go to Website</a>
+  <h3>All Posts</h3>
+  <div id="posts"></div>
+
+  <hr>
+  <a href="index.html">Go to Website</a>
+
   <!-- Supabase CDN -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.7/dist/umd/supabase.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<!-- Supabase Init -->
-<script>
-  const SUPABASE_URL = "https://cjoupiubkwhmlbzfek.supabase.co";
-  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNqb3Vwbml1YmJrd2htbGJ6ZmVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1MjE1NDQsImV4cCI6MjA4MzA5NzU0NH0.DkGna34dS0v63WtPQtoDSs61tEAlh-vlo3ZQ6iccWyg";
+  <!-- Supabase Init (ONLY HERE) -->
+  <script>
+    const SUPABASE_URL = "https://cjoupibukwhmlbzfek.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNqb3Vwbml1YmJrd2htbGJ6ZmVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1MjE1NDQsImV4cCI6MjA4MzA5NzU0NH0.DkGna34dS0v63WtPQtoDSs61tEAlh-vlo3ZQ6iccWyg";
 
-  window.supabaseClient = supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_ANON_KEY
-  );
-</script>
+    window.supabaseClient = supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_ANON_KEY
+    );
+  </script>
 
-<!-- Dashboard Logic -->
-<script src="dashboard.js"></script>
+  <!-- Dashboard Logic -->
+  <script src="dashboard.js"></script>
+
 </body>
 </html>
