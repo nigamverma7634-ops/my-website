@@ -41,13 +41,17 @@ async function loadPosts() {
   const box = document.getElementById("posts");
   box.innerHTML = "";
 
-  data.forEach(post => {
-    box.innerHTML += `
+ data.forEach(post => {
+  box.innerHTML += `
+    <div style="border-bottom:1px solid #ccc; margin-bottom:10px;">
       <h4>${post.title}</h4>
       <p>${post.content}</p>
-      <hr />
-    `;
-  });
+
+      <!-- DELETE BUTTON (ONLY ADMIN DASHBOARD) -->
+      <button onclick="deletePost('${post.id}')">Delete</button>
+    </div>
+  `;
+});
 }
 
 loadPosts();
