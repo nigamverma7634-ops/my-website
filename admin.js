@@ -1,5 +1,7 @@
+alert("admin.js load ho gaya ✅");
+
 async function loginAdmin(event) {
-  event.preventDefault(); // 🔥 PAGE RELOAD STOP
+  event.preventDefault(); // 🔥 PAGE RELOAD ROKTA HAI
 
   alert("loginAdmin function chala ✅");
 
@@ -18,7 +20,7 @@ async function loginAdmin(event) {
     });
 
   if (error) {
-    alert("Login failed: " + error.message);
+    alert("Login failed ❌: " + error.message);
     console.error(error);
   } else {
     alert("Login success ✅ Dashboard open hoga");
