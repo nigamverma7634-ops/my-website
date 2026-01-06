@@ -2,34 +2,29 @@
 <html>
 <head>
   <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="tictactoe.css">
 </head>
 <body>
 
-<h1>Tic Tac Toe</h1>
+<div class="game-container">
+  <h1>Tic Tac Toe</h1>
 
-<div id="game">
-  <button onclick="play(this)"></button>
-  <button onclick="play(this)"></button>
-  <button onclick="play(this)"></button><br>
+  <div class="board" id="board">
+    <div class="cell" onclick="play(0)"></div>
+    <div class="cell" onclick="play(1)"></div>
+    <div class="cell" onclick="play(2)"></div>
+    <div class="cell" onclick="play(3)"></div>
+    <div class="cell" onclick="play(4)"></div>
+    <div class="cell" onclick="play(5)"></div>
+    <div class="cell" onclick="play(6)"></div>
+    <div class="cell" onclick="play(7)"></div>
+    <div class="cell" onclick="play(8)"></div>
+  </div>
 
-  <button onclick="play(this)"></button>
-  <button onclick="play(this)"></button>
-  <button onclick="play(this)"></button><br>
-
-  <button onclick="play(this)"></button>
-  <button onclick="play(this)"></button>
-  <button onclick="play(this)"></button>
+  <p id="status"></p>
+  <button onclick="resetGame()">Restart</button>
 </div>
 
-<script>
-let turn = "X";
-function play(btn){
-  if(btn.innerText===""){
-    btn.innerText = turn;
-    turn = turn==="X" ? "O" : "X";
-  }
-}
-</script>
-
+<script src="tictactoe.js"></script>
 </body>
 </html>
