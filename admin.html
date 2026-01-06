@@ -10,7 +10,11 @@
 <input type="email" id="email" placeholder="Admin Email"><br><br>
 <input type="password" id="password" placeholder="Password"><br><br>
 
-<button type="button" onclick="loginAdmin()">Login</button>
+<form onsubmit="loginAdmin(event)">
+  <input id="email" type="email" placeholder="Admin Email" />
+  <input id="password" type="password" placeholder="Password" />
+  <button type="submit">Login</button>
+</form>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
