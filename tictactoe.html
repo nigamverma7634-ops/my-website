@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe</title>
+</head>
+<body>
+
+<h1>Tic Tac Toe</h1>
+
+<div id="game">
+  <button onclick="play(this)"></button>
+  <button onclick="play(this)"></button>
+  <button onclick="play(this)"></button><br>
+
+  <button onclick="play(this)"></button>
+  <button onclick="play(this)"></button>
+  <button onclick="play(this)"></button><br>
+
+  <button onclick="play(this)"></button>
+  <button onclick="play(this)"></button>
+  <button onclick="play(this)"></button>
+</div>
+
+<script>
+let turn = "X";
+function play(btn){
+  if(btn.innerText===""){
+    btn.innerText = turn;
+    turn = turn==="X" ? "O" : "X";
+  }
+}
+</script>
+
+</body>
+</html>
