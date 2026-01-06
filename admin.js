@@ -32,7 +32,7 @@ async function loginAdmin(event) {
     }
 
     alert("Login successful");
-    window.location.href = "admin-dashboard.html";
+    window.location.href = "dashboard.html";
 
   } catch (err) {
     console.error(err);
