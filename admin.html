@@ -1,18 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin Login</title>
+  <title>Homepage</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Admin Login</h2>
+<!-- TOP BAR -->
+<header class="topbar">
+  <div>Home | About Us</div>
+  <div class="animation">🐢 Tortoise Animation</div>
+  <div>X</div>
+</header>
 
-<input type="text" id="username" placeholder="Username"><br><br>
-<input type="password" id="password" placeholder="Password"><br><br>
+<div class="layout">
 
-<button onclick="login()">Login</button>
+  <!-- LEFT -->
+  <aside class="left">
+    <button>Profile</button>
+  </aside>
 
-<script src="admin.js"></script>
+  <!-- CENTER -->
+  <main class="center">
+    <button class="arrow">◀</button>
+
+    <div class="card">
+      <div class="logo">LOGO</div>
+      <button>Sign In</button>
+      <button>Login</button>
+    </div>
+
+    <button class="arrow">▶</button>
+  </main>
+
+  <!-- RIGHT -->
+  <aside class="right">
+    <h3>GENRE</h3>
+    <ul>
+      <li>Story</li>
+      <li>Horror</li>
+      <li>Comedy</li>
+      <li>Motivation</li>
+    </ul>
+  </aside>
+
+</div>
+
+<!-- BOTTOM -->
+<footer class="bottom">
+  🎮 Tic Tac Toe
+</footer>
 
 </body>
 </html>
