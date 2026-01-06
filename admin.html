@@ -1,55 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Homepage</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Admin Login</title>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<header class="topbar">
-  <div>Home | About Us</div>
-  <div class="animation">🐢 Tortoise Animation</div>
-  <div>X</div>
-</header>
+<h2>Admin Login</h2>
 
-<div class="layout">
+<input type="email" id="email" placeholder="Admin Email"><br><br>
+<input type="password" id="password" placeholder="Password"><br><br>
 
-  <!-- LEFT -->
-  <aside class="left">
-    <button>Profile</button>
-  </aside>
+<button onclick="loginAdmin()">Login</button>
 
-  <!-- CENTER -->
-  <main class="center">
-    <button class="arrow">◀</button>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <div class="card">
-      <div class="logo">LOGO</div>
-      <button>Sign In</button>
-      <button>Login</button>
-    </div>
+<script>
+  const SUPABASE_URL = "https://cjoupiubbkwhmlbzfek.supabase.co";
+  const SUPABASE_ANON_KEY = "YOUR_ANON_KEY_HERE";
 
-    <button class="arrow">▶</button>
-  </main>
+  const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+  );
+</script>
 
-  <!-- RIGHT -->
-  <aside class="right">
-    <h3>GENRE</h3>
-    <ul>
-      <li>Story</li>
-      <li>Horror</li>
-      <li>Comedy</li>
-      <li>Motivation</li>
-    </ul>
-  </aside>
-
-</div>
-
-<!-- BOTTOM -->
-<footer class="bottom">
-  🎮 Tic Tac Toe
-</footer>
-
+<script src="admin.js"></script>
 </body>
 </html>
