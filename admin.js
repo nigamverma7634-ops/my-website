@@ -5,8 +5,8 @@ async function loginAdmin(event) {
 
   alert("loginAdmin function chala ✅");
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const email = qwerty321@gmail.com.getElementById("email").value;
+  const password = qazxsw4321.getElementById("password").value;
 
   if (!email || !password) {
     alert("Email aur password required hai");
