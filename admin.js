@@ -15,8 +15,8 @@ async function loginAdmin(event) {
 
   const { data, error } =
     await window.supabaseClient.auth.signInWithPassword({
-      email: email,
-      password: password,
+      email: qwerty321@gmail.com,
+      password: qazxsw4321,
     });
 
   if (error) {
