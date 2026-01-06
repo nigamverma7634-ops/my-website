@@ -1,52 +1,38 @@
 body {
-  font-family: Arial;
   margin: 0;
+  font-family: Arial;
+  text-align: center;
 }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background: #eee;
-}
-
-.layout {
-  display: flex;
-  height: 70vh;
-}
-
-.left, .right {
-  width: 15%;
+.nav {
+  border-bottom: 4px solid black;
   padding: 10px;
 }
 
-.center {
-  width: 70%;
+.container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  margin-top: 80px;
 }
 
-.card {
-  border: 2px solid black;
-  padding: 40px;
-  text-align: center;
+.box {
+  width: 400px;
+  height: 200px;
+  border: 4px solid black;
+  margin: 0 40px;
 }
 
-.logo {
-  border: 2px solid red;
-  padding: 20px;
-  margin-bottom: 10px;
+.side-btn {
+  font-size: 40px;
+  padding: 10px 20px;
 }
 
-.arrow {
+.down {
+  margin-top: 50px;
+}
+
+.down-btn {
   font-size: 30px;
-  background: none;
-  border: none;
-}
-
-.bottom {
-  text-align: center;
-  padding: 10px;
-  border-top: 1px solid #ccc;
+  padding: 10px 30px;
 }
