@@ -10,3 +10,7 @@ fetch('posts.json')
     `;
   });
 });
+// ↓↓↓ Tic Tac Toe open karne ke liye ↓↓↓
+function openGame() {
+  window.location.href = "tictactoe.html";
+}
