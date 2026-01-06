@@ -1,48 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Admin Login</title>
 
-  <!-- Supabase CDN (ONLY ONCE) -->
+  <!-- Supabase CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Admin JS -->
+  <script src="admin.js" defer></script>
 </head>
 <body>
 
   <h1>Admin Login</h1>
 
-  <!-- ✅ SINGLE LOGIN FORM (NO DUPLICATE IDS) -->
   <form onsubmit="loginAdmin(event)">
     <input
-      id="email"
       type="email"
+      id="email"
       placeholder="Admin Email"
       required
-    /><br /><br />
+    /><br><br>
 
     <input
-      id="password"
       type="password"
+      id="password"
       placeholder="Password"
       required
-    /><br /><br />
+    /><br><br>
 
     <button type="submit">Login</button>
   </form>
-
-  <!-- ✅ Supabase Init (ONLY HERE) -->
-  <script>
-    const SUPABASE_URL = "https://cjoupniubbkwhmlbzfek.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNqb3Vwbml1YmJrd2htbGJ6ZmVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1MjE1NDQsImV4cCI6MjA4MzA5NzU0NH0.DkGna34dS0v63WtPQtoDSs61tEAlh-vlo3ZQ6iccWyg";
-
-    window.supabaseClient = supabase.createClient(
-      SUPABASE_URL,
-      SUPABASE_ANON_KEY
-    );
-  </script>
-
-  <!-- Admin Logic -->
-  <script src="admin.js"></script>
 
 </body>
 </html>
