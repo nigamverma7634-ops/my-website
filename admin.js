@@ -1,10 +1,22 @@
-function login() {
-  const user = document.getElementById("username").value;
-  const pass = document.getElementById("password").value;
+async function loginAdmin() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-  if (user === "admin" && pass === "12345") {
-    window.location.href = "dashboard.html";
+  if (!email || !password) {
+    alert("Email aur password required hai");
+    return;
+  }
+
+  const { data, error } = await supabaseClient.auth.signInWithPassword({
+    email: email,
+    password: password
+  });
+
+  if (error) {
+    alert("Login failed: " + error.message);
+    console.error(error);
   } else {
-    alert("Wrong username or password");
+    // ✅ Login success → dashboard
+    window.location.href = "dashboard.html";
   }
 }
