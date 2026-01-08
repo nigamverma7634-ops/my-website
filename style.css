@@ -36,3 +36,25 @@ body {
   font-size: 30px;
   padding: 10px 30px;
 }
+
+/* HOME animation */
+#scene {
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
+}
+
+#boy {
+  position: absolute;
+  left: 10%;
+  bottom: 0;
+  width: 80px;
+  transition: left 3s linear;
+}
+
+#house {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  width: 120px;
+}
