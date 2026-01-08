@@ -7,7 +7,7 @@
 <body>
 
   <div class="nav">
-    <button>HOME</button>
+    <button onclick="goHome()">HOME</button>
     <button>ABOUT US</button>
   </div>
 
@@ -20,16 +20,39 @@
 
     <button class="side-btn">&gt;</button>
   </div>
+  
+  <!-- HOME animation -->
+<div id="scene">
+  <img src="boy.png" id="boy">
+  <img src="house.png" id="house">
+</div>
 
   <div class="down">
     <button class="down-btn" onclick="openGame()">V</button>
   </div>
+<script>
+  
+  function openGame() {
+    window.location.href = "tictactoe.html";
+  }
 
-  <script>
-    function openGame() {
-      window.location.href = "tictactoe.html";
+  function goHome() {
+    const boy = document.getElementById("boy");
+
+    if (!boy) {
+      alert("boy image not found");
+      return;
     }
-  </script>
+
+    // ladka right side ki taraf chale
+    boy.style.left = "65%";
+
+    // 3 second baad redirect
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 3000);
+  }
+</script>
 
 </body>
 </html>
