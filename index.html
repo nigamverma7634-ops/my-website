@@ -29,10 +29,17 @@
   function openGame() {
     window.location.href = "tictactoe.html";
   }
+function goHome() {
+  const box = document.querySelector(".box");
 
-  function goHome() {
-    window.location.href = "index.html";
+  if (box) {
+    box.classList.remove("home-animate"); // reset
+    void box.offsetWidth;                // reflow
+    box.classList.add("home-animate");   // animation
   }
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 </script>
 
 </body>
