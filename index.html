@@ -36,22 +36,15 @@
     window.location.href = "tictactoe.html";
   }
 
-  function goHome() {
-    const boy = document.getElementById("boy");
-
-    if (!boy) {
-      alert("boy image not found");
-      return;
-    }
-
-    // ladka right side ki taraf chale
-    boy.style.left = "65%";
-
-    // 3 second baad redirect
-    setTimeout(() => {
-      window.location.href = "index.html";
-    }, 3000);
+<script>
+  function openGame() {
+    window.location.href = "tictactoe.html";
   }
+
+  function gohome() {
+    window.location.href = "index.html";
+  }
+</script>
 </script>
 
 </body>
